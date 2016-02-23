@@ -3,9 +3,9 @@ import MySQLdb
 from bs4 import BeautifulSoup
 def getList():
 	try:
-		conn = MySQLdb.connect(host='localhost', user='sdww', passwd='sdww', db='picture', port=3306, charset='utf8')
+		conn = MySQLdb.connect(host='www.sdww8591.com', user='sdww', passwd='sdww', db='picture', port=3306, charset='utf8')
 		cur = conn.cursor()
-		path = r"/home/sdww/html/sdww/index.html"
+		path = r"D:/project/sdww8591.com/pages/index.html"
 		soup = BeautifulSoup(open(path))
 		for im in soup.find_all('img'):
 			title = im['alt']
