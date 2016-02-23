@@ -24,6 +24,6 @@ public class TestController {
         List<Photo> photos = photoDao.getPhotos();
         model.addAttribute("photos", photos);
         String aaa = "aaa";
-        return "redirect:index";
+        return "test";
     }
 }
