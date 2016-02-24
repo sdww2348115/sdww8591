@@ -14,10 +14,15 @@
     <link rel="stylesheet" type="text/css" href="./css/ads.css">
     <!--link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"-->
     <script src="./js/jquery-1.12.0.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/modal.js"></script>
     <meta class="foundation-mq-small">
     <meta class="foundation-mq-medium">
     <meta class="foundation-mq-large">
+
+    <!--video js-->
+    <link href="http://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.0.2/video.js"></script>
     <style></style>
 </head>
 
@@ -149,7 +154,7 @@
             z-index: 5;
         }
     </style>
-    <div class="row project-header">
+    <div class="row project-header" style="text-align:center">
         <div class="large-8 columns">
             <h1 style="font-family: 'Tangerine', cursive; font-size:100px">WE FORERVER</h1>
             <p class="lead" style="font-family:幼圆; font-size:30px; font-weight:bold;">有你们，生活何处不美好</p>
@@ -165,10 +170,17 @@
                     </a>
                 </li>
                 </c:forEach>
+                <li>
+                    <a href="javascript:void(0);" title="视频测试" style="font-family:方正舒体; " class="video-play">
+                    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
+                        <source src="http://123.56.144.224/2.mp4" type="video/mp4">
+                    </video>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
 </section>
-</body>
 
+</body>
 </html>

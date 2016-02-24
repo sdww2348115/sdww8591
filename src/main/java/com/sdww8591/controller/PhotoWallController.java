@@ -14,16 +14,15 @@ import java.util.List;
  * Created by sdww on 16-2-22
  */
 @Controller
-public class TestController {
+public class PhotoWallController {
 
     @Resource
     public PhotoDao photoDao;
 
-    @RequestMapping("/test")
+    @RequestMapping("/photo")
     public String getPhotoPage(Model model) {
         List<Photo> photos = photoDao.getPhotos();
         model.addAttribute("photos", photos);
-        String aaa = "aaa";
-        return "test";
+        return "photo-wall";
     }
 }
