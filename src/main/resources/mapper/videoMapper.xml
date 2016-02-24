@@ -2,17 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sdww8591.dao.PhotoDao">
+<mapper namespace="com.sdww8591.dao.VideoDao">
 
-    <resultMap id="photoMap" type="com.sdww8591.entity.Photo">
+    <resultMap id="videoMap" type="com.sdww8591.entity.Video">
         <result property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="url" column="url"/>
+        <result property="cover" column="cover"/>
     </resultMap>
 
-    <select id="getPhotoById" resultMap="photoMap">
+    <select id="getVideoById" resultMap="videoMap">
         SELECT *
-        FROM t_picture_info
+        FROM t_video_info
         WHERE id = #{id}
     </select>
 </mapper>

@@ -9,6 +9,8 @@
 
     <mappers>
         <mapper resource="mapper/photoMapper.xml"/>
+        <mapper resource="mapper/itemMapper.xml"/>
+        <mapper resource="mapper/videoMapper.xml"/>
     </mappers>
 
 </configuration>

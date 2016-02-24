@@ -1,11 +1,12 @@
 package com.sdww8591.entity;
 
 /**
- * Created by sdww on 16-2-22.
+ * Created by sdww on 16-2-24.
  */
-public class Photo {
+public class Video {
+
     /**
-     * 照片id
+     * 视频id
      */
     private int id;
 
@@ -15,11 +16,16 @@ public class Photo {
     private String title;
 
     /**
-     * 照片url
+     * 视频url
      */
     private String url;
 
-    public int getId() {
+    /**
+     * 视频封面url
+     */
+    private String cover;
+
+    private int getId() {
         return id;
     }
 
@@ -41,5 +47,13 @@ public class Photo {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 }

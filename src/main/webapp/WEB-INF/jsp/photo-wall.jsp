@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.sdww8591.entity.Photo" %>
+<%@ page import="com.sdww8591.entity.Photo" import="com.sdww8591.entity.Item" import="com.sdww8591.entity.Video"%>
 <html lang="en" style="" class=" ">
 <!--<![endif]-->
 
@@ -163,20 +163,25 @@
     <div class="row">
         <div class="large-12 columns" style="overflow: visible">
             <ul class="polaroids large-block-grid-4 small-block-grid-2">
-                <c:forEach items="${photos}" var="photo">
-                <li>
-                    <a href="javascript:void(0);" title=<c:out value="${photo.title}"/> style="font-family:方正舒体; " class="video-play">
-                        <img alt=<c:out value="${photo.title}"/> src=<c:out value="${photo.url}"/>>
-                    </a>
-                </li>
+                <c:forEach items="${itemList}" var="item">
+                    <c:if test="${item.type==1}">
+                        <li>
+                            <a href="javascript:void(0);" title=<c:out value="${item.obj.title}"/> style="font-family:方正舒体;" class="video-play">
+                            <img alt=<c:out value="${item.obj.title}"/> src=<c:out value="${item.obj.url}"/>>
+                            </a>
+                        </li>
+                    </c:if>
+                    <c:if test="${item.type==2}">
+                        <c:set var="video" value="${item.obj}"/>
+                        <li  width="573" height="325">
+                            <a href="javascript:void(0);" title=<c:out value="${video.title}"/> style="font-family:方正舒体;" class="video-play"  width="573" height="325">
+                                <video class="video-js vjs-default-skin" controls preload="none"  width="573" height="325" poster=<c:out value="${video.cover}"/> data-setup="{}">
+                                    <source src=<c:out value="${video.url}"/> type="video/mp4">
+                                </video>
+                            </a>
+                        </li>
+                    </c:if>
                 </c:forEach>
-                <li>
-                    <a href="javascript:void(0);" title="视频测试" style="font-family:方正舒体; " class="video-play">
-                    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
-                        <source src="http://123.56.144.224/2.mp4" type="video/mp4">
-                    </video>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
