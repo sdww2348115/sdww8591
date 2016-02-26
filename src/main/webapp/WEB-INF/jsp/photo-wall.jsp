@@ -162,7 +162,7 @@
     </div>
     <div class="row">
         <div class="large-12 columns" style="overflow: visible">
-            <ul class="polaroids large-block-grid-4 small-block-grid-2">
+            <ul class="polaroids small-block-grid-2 large-block-grid-4">
                 <c:forEach items="${itemList}" var="item">
                     <c:if test="${item.type==1}">
                         <li>
@@ -173,9 +173,9 @@
                     </c:if>
                     <c:if test="${item.type==2}">
                         <c:set var="video" value="${item.obj}"/>
-                        <li  width="573" height="325">
-                            <a href="javascript:void(0);" title=<c:out value="${video.title}"/> style="font-family:方正舒体;" class="video-play"  width="573" height="325">
-                                <video class="video-js vjs-default-skin" controls preload="none"  width="573" height="325" poster=<c:out value="${video.cover}"/> data-setup="{}">
+                        <li>
+                            <a href="javascript:void(0);" title=<c:out value="${video.title}"/> style="font-family:方正舒体;" class="video-play">
+                                <video class="video-js vjs-default-skin" controls preload="none" poster=<c:out value="${video.cover}"/> data-setup="{}">
                                     <source src=<c:out value="${video.url}"/> type="video/mp4">
                                 </video>
                             </a>
